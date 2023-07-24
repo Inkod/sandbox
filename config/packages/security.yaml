@@ -1,13 +1,14 @@
 security:
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
+        auto: 'auto'
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         # used to reload user from session & other features (e.g. switch_user)
         app_user_provider:
             entity:
-                class: App\Entity\User
+                class: App\Account\Domain\Model\User
                 property: email
     firewalls:
         dev:
@@ -16,9 +17,9 @@ security:
         main:
             lazy: true
             provider: app_user_provider
-            custom_authenticator: App\Security\AppAuthenticator
+            custom_authenticator: App\Account\Infra\Symfony\Security\AppAuthenticator
             logout:
-                path: app_logout
+                path: account_logout_route
                 # where to redirect after logout
                 # target: app_any_route
 

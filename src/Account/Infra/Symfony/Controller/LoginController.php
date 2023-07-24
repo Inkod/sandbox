@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Controller;
+declare(strict_types=1);
+
+namespace App\Account\Infra\Symfony\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-class SecurityController extends AbstractController
+final class LoginController extends AbstractController
 {
-    public const LOGIN_ROUTE = 'app_login';
-    public const LOGOUT_ROUTE = 'app_logout';
-
-    #[Route(path: '/login', name: self::LOGIN_ROUTE)]
+    #[Route(path: '/login', name: 'account_login_route')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         // get the login error if there is one
@@ -21,11 +20,5 @@ class SecurityController extends AbstractController
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
-    }
-
-    #[Route(path: '/logout', name: self::LOGOUT_ROUTE)]
-    public function logout(): void
-    {
-        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 }

@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Security;
+namespace App\Account\Infra\Symfony\Security;
 
 use App\Controller\HomeController;
-use App\Controller\SecurityController;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -46,11 +45,11 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse($this->urlGenerator->generate(HomeController::INDEX_ROUTE));
+        return new RedirectResponse($this->urlGenerator->generate('app_home'));
     }
 
     protected function getLoginUrl(Request $request): string
     {
-        return $this->urlGenerator->generate(SecurityController::LOGIN_ROUTE);
+        return $this->urlGenerator->generate('account_login_route');
     }
 }

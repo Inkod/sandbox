@@ -3,3 +3,9 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+account_controllers:
+    resource:
+        path: ../src/Account/Infra/Symfony/Controller/
+        namespace: App\Account\Infra\Symfony\Controller
+    type: attribute
