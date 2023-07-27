@@ -12,6 +12,7 @@ use App\Account\Infra\Symfony\Security\AppAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\PasswordHasherFactoryInterface;
@@ -55,7 +56,7 @@ final class RegistrationController extends AbstractController
                 $output->user,
                 $this->authenticator,
                 $request,
-            );
+            ) ?: new RedirectResponse($this->generateUrl('account_login_route'));
         }
 
         return $this->renderResponseWithView($form);
