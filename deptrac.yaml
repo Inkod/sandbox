@@ -1,0 +1,25 @@
+deptrac:
+  paths:
+    - ./src
+  exclude_files:
+    - '#.*test.*#'
+  layers:
+    - name: AccountInfrastructure
+      collectors:
+        - type: directory
+          regex: src/Account/Infrastructure/.*
+    - name: AccountApplication
+      collectors:
+        - type: directory
+          regex: src/Account/Application/.*
+    - name: AccountDomain
+      collectors:
+        - type: directory
+          regex: src/Account/Domain/.*
+  ruleset:
+    AccountInfrastructure:
+      - AccountDomain
+      - AccountApplication
+    AccountApplication:
+      - AccountDomain
+    AccountDomain: ~
