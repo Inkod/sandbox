@@ -10,5 +10,6 @@ final class RegisterUserOutput
 {
     public function __construct(
         public readonly User $user,
-    ) {}
+    ) {
+    }
 }

@@ -29,7 +29,7 @@ final class RegistrationController extends AbstractController
         private readonly AppAuthenticator $authenticator,
         PasswordHasherFactoryInterface $passwordHasherFactory,
     ) {
-        $this->passwordHasher =  $passwordHasherFactory->getPasswordHasher('auto');
+        $this->passwordHasher = $passwordHasherFactory->getPasswordHasher('auto');
     }
 
     #[Route('/register', name: 'account_register_route', methods: ['GET', 'POST'])]

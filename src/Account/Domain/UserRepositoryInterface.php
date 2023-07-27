@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Account\Domain;
 
 use App\Account\Domain\Model\EmailAddress;

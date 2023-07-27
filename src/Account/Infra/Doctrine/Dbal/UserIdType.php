@@ -11,7 +11,6 @@ use Doctrine\DBAL\Types\Type;
 
 final class UserIdType extends Type
 {
-
     /**
      * @throws ConversionException
      */

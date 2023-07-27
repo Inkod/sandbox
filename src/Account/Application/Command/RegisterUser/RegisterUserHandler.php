@@ -13,7 +13,8 @@ final class RegisterUserHandler
 {
     public function __construct(
         private readonly UserRepositoryInterface $userRepository,
-    ) {}
+    ) {
+    }
 
     /**
      * @throws UnableToRegisterUserEmailAlreadyUsedException

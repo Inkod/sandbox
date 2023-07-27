@@ -80,7 +80,8 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "linter": "./vendor/bin/php-cs-fixer fix --no-interaction -v"
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -92,6 +93,7 @@
         }
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.22",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "6.3.*",
         "symfony/css-selector": "6.3.*",
