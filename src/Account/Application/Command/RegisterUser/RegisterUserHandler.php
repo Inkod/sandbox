@@ -8,7 +8,9 @@ use App\Account\Application\Command\RegisterUser\Exception\UnableToRegisterUserE
 use App\Account\Domain\Model\EmailAddress;
 use App\Account\Domain\Model\User;
 use App\Account\Domain\UserRepositoryInterface;
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
+#[AsMessageHandler(bus: 'command.bus')]
 final class RegisterUserHandler
 {
     public function __construct(

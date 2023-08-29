@@ -20,11 +20,17 @@ deptrac:
       collectors:
         - type: directory
           regex: src/UserInterface/.*
+    - name: Infrastructure
+      collectors:
+        - type: directory
+          regex: src/Infra/.*
   ruleset:
     UserInterface:
       - AccountApplication
+      - Infrastructure
     AccountInfrastructure:
       - AccountDomain
     AccountApplication:
       - AccountDomain
     AccountDomain: ~
+    Infrastructure: ~

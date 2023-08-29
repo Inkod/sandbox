@@ -23,3 +23,9 @@ services:
 
     App\UserInterface\Web\Symfony\:
         resource: '../src/UserInterface/Web/Symfony/*'
+
+    App\Infra\:
+        resource: '../src/Infra/*'
+
+    App\Infra\Symfony\Messenger\CommandBus:
+        $messageBus: '@command.bus'

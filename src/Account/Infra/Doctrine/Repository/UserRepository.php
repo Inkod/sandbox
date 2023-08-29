@@ -28,6 +28,5 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
     public function save(User $user): void
     {
         $this->getEntityManager()->persist($user);
-        $this->getEntityManager()->flush(); // TODO: implement real command bus with transaction middleware and remove flush here
     }
 }
