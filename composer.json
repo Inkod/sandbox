@@ -84,7 +84,12 @@
         ],
         "linter": "./vendor/bin/php-cs-fixer fix --no-interaction -v",
         "phpstan": "./vendor/bin/phpstan analyse",
-        "deptrac": "./vendor/bin/deptrac"
+        "deptrac": "./vendor/bin/deptrac",
+        "qa": [
+            "@linter",
+            "@phpstan",
+            "@deptrac"
+        ]
     },
     "conflict": {
         "symfony/symfony": "*"
