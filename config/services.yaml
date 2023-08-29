@@ -6,13 +6,10 @@
 parameters:
 
 services:
-    # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
-    # makes classes in src/ available to be used as services
-    # this creates a service per class whose id is the fully-qualified class name
     App\Account\Application\:
         resource: '../src/Account/Application/**/*Handler.php'
 
@@ -24,8 +21,5 @@ services:
     App\Account\Infra\:
         resource: '../src/Account/Infra/*'
 
-    App\Controller\: # TODO: will be remove later
-        resource: '../src/Controller/*'
-
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    App\UserInterface\Web\Symfony\:
+        resource: '../src/UserInterface/Web/Symfony/*'

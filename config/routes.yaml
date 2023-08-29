@@ -1,11 +1,5 @@
 controllers:
     resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
-
-account_controllers:
-    resource:
-        path: ../src/Account/Infra/Symfony/Controller/
-        namespace: App\Account\Infra\Symfony\Controller
+        path: ../src/UserInterface/Web/Symfony/Controller/
+        namespace: App\UserInterface\Web\Symfony\Controller
     type: attribute

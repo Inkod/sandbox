@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Account\Infra\Symfony\Security;
+namespace App\UserInterface\Web\Symfony\Security;
 
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\RedirectResponse;

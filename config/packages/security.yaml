@@ -17,7 +17,7 @@ security:
         main:
             lazy: true
             provider: app_user_provider
-            custom_authenticator: App\Account\Infra\Symfony\Security\AppAuthenticator
+            custom_authenticator: App\UserInterface\Web\Symfony\Security\AppAuthenticator
             logout:
                 path: account_logout_route
                 # where to redirect after logout

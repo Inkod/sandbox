@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Account\Infra\Symfony\Controller;
+namespace App\UserInterface\Web\Symfony\Controller\Account\Registration;
 
 use App\Account\Application\Command\RegisterUser\Exception\UnableToRegisterUserEmailAlreadyUsedException;
 use App\Account\Application\Command\RegisterUser\RegisterUserHandler;
 use App\Account\Application\Command\RegisterUser\RegisterUserInput;
-use App\Account\Infra\Symfony\Form\RegistrationFormType;
-use App\Account\Infra\Symfony\Security\AppAuthenticator;
+use App\UserInterface\Web\Symfony\Security\AppAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;

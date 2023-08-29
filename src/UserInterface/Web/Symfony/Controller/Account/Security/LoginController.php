@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Account\Infra\Symfony\Controller;
+namespace App\UserInterface\Web\Symfony\Controller\Account\Security;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
