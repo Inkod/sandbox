@@ -25,7 +25,7 @@ final class CommandBus
             return $this->handleMessage($message);
         } catch (HandlerFailedException $e) {
             // code below allows to throw the current exception raised by the handler
-            $nested = $e->getNestedExceptions();
+            $nested = $e->getWrappedExceptions();
 
             if ([] === $nested) {
                 throw new \LogicException('Bus must have one nested exception', 0, $e);
